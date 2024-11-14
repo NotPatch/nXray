@@ -1,0 +1,79 @@
+license-key: ""
+
+message:
+  alreadyUse: "&cYou already have an active X-Ray Scanner."
+
+hologram:
+  #Placeholders are %radius% and %duration%
+  lines:
+    - ""
+    - "#FF9988X-Ray Scanner"
+    - ""
+    - "#FF9988Radius: %radius%"
+    - "#FF9988Duration: %duration%"
+    - ""
+
+xray-items:
+  simple:
+    # There is ores list below
+    # COAL_ORE, IRON_ORE, GOLD_ORE, DIAMOND_ORE, EMERALD_ORE, COPPER_ORE, LAPIS_ORE, REDSTONE_ORE,
+    # DEEPSLATE_COAL_ORE, DEEPSLATE_IRON_ORE, DEEPSLATE_GOLD_ORE, DEEPSLATE_DIAMOND_ORE,
+    # DEEPSLATE_EMERALD_ORE, DEEPSLATE_COPPER_ORE, DEEPSLATE_LAPIS_ORE, DEEPSLATE_REDSTONE_ORE
+    # ANCIENT_DEBRIS, SPAWNER, TRIAL_SPAWNER
+    scan-blocks:
+      - COAL_ORE
+      - IRON_ORE
+      - GOLD_ORE
+    scan-radius: 30
+    scan-duration: 60
+    #CUSTOM_HEAD or Any Material
+    item-type: "CUSTOM_HEAD"
+    #https://minecraft-heads.com
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGIyZmNmNTU3YjMzN2EyYzNhNmQ1Zjg3NzU2YzFlZWViYWRhOTY0NTc2NjU2MWY3MzIwYzQ3ODcxZGQ1ZDY2NiJ9fX0="
+    name: "Simple X-Ray Scanner"
+    lore:
+      - ""
+      - "Simple X-Ray scanner."
+      - ""
+      - "Block Radius: 30"
+      - "Duration: 60"
+      - ""
+  advanced:
+    scan-blocks:
+      - COAL_ORE
+      - IRON_ORE
+      - GOLD_ORE
+      #
+      - DIAMOND_ORE
+      - EMERALD_ORE
+      - COPPER_ORE
+      - LAPIS_ORE
+      - REDSTONE_ORE
+    scan-radius: 50
+    scan-duration: 60
+    item-type: "CUSTOM_HEAD"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzM4ZWI3NmU2MGQzZDQ4M2Y2OTk0N2ZiMmZiMWNlYmRlM2QzOTNjZWFjYWY4NTQzZWI2M2Q3N2I0YmM1YTM5OSJ9fX0="
+    name: "#225278Advanced X-Ray Scanner"
+    lore:
+      - ""
+      - "#225278Advanced X-Ray scanner."
+      - ""
+      - "#225278Block Radius: 50"
+      - "#225278Duration: 60"
+      - ""
+  spawner:
+    scan-blocks:
+      - SPAWNER
+      - TRIAL_SPAWNER
+    scan-radius: 100
+    scan-duration: 60
+    item-type: "CUSTOM_HEAD"
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdiMjE4OTMwMGYzMzliYTA1MGUwMWFlMmE1NDBiN2U4OWVmODk2YTU1Yzc5MTZkY2M5ZTU4NTFhZjg2NDExZSJ9fX0="
+    name: "#225278Spawner X-Ray Scanner"
+    lore:
+      - ""
+      - "#225278Spawner X-Ray scanner."
+      - ""
+      - "#225278Block Radius: 100"
+      - "#225278Duration: 60"
+      - ""

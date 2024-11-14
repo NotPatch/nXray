@@ -3,4 +3,9 @@ version: '1.0-SNAPSHOT'
 main: com.notpatch.nXray.NXray
 api-version: '1.21'
 authors: [ NotPatch ]
-website: www.hazelands.net
+softdepend:
+    - DecentHolograms
+
+commands:
+    nxray:
+        aliases: [nXray]
