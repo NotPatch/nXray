@@ -9,7 +9,6 @@ public class StringUtil {
 
     private static final Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}");
 
-
     public static String hexColor(String message) {
         Matcher matcher = pattern.matcher(message);
 

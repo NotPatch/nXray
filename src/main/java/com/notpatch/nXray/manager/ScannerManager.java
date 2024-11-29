@@ -1,7 +1,7 @@
 package com.notpatch.nXray.manager;
 
 import com.notpatch.nXray.NXray;
-import com.notpatch.nXray.framework.XrayScanner;
+import com.notpatch.nXray.model.XrayScanner;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

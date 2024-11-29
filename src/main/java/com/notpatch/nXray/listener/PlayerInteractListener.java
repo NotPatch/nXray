@@ -1,7 +1,7 @@
 package com.notpatch.nXray.listener;
 
 import com.notpatch.nXray.NXray;
-import com.notpatch.nXray.framework.XrayScanner;
+import com.notpatch.nXray.model.XrayScanner;
 import com.notpatch.nXray.manager.DisplayManager;
 import com.notpatch.nXray.manager.ScannerManager;
 import com.notpatch.nXray.util.StringUtil;

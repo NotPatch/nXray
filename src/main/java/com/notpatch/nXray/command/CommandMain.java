@@ -1,7 +1,7 @@
 package com.notpatch.nXray.command;
 
 import com.notpatch.nXray.NXray;
-import com.notpatch.nXray.framework.XrayScanner;
+import com.notpatch.nXray.model.XrayScanner;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;

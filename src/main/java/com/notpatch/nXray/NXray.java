@@ -38,14 +38,15 @@ public final class NXray extends JavaPlugin {
             useDecentHolograms = true;
         }
 
-        LicenseGate licenseGate = new LicenseGate("a1de4");
-        LicenseGate.ValidationType result = licenseGate.verify(getConfig().getString("license-key"), "nxray");
-        if(result.isValid()){
-            getLogger().info("License key is valid.");
-        }else{
-            getLogger().severe("License key is invalid.");
+        /*
+        boolean isValid = new LicenseGate("a1de4")
+                .verify(getConfig().getString("license-key"), "nxray")
+                .isValid();
+        if(!isValid) {
+            getLogger().severe("Invalid license key! Plugin will be disabled.");
             getServer().getPluginManager().disablePlugin(this);
-        }
+        }*/
+
     }
 
     @Override

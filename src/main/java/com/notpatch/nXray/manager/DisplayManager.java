@@ -1,7 +1,7 @@
 package com.notpatch.nXray.manager;
 
 import com.notpatch.nXray.NXray;
-import com.notpatch.nXray.framework.XrayScanner;
+import com.notpatch.nXray.model.XrayScanner;
 import com.notpatch.nXray.util.StringUtil;
 import eu.decentsoftware.holograms.api.DHAPI;
 import fr.skytasul.glowingentities.GlowingBlocks;
