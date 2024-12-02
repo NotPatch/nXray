@@ -4,7 +4,6 @@ import com.notpatch.nXray.command.CommandMain;
 import com.notpatch.nXray.listener.PlayerInteractListener;
 import com.notpatch.nXray.manager.ArmorStandManager;
 import com.notpatch.nXray.manager.ScannerManager;
-import dev.respark.licensegate.LicenseGate;
 import fr.skytasul.glowingentities.GlowingBlocks;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -37,15 +36,6 @@ public final class NXray extends JavaPlugin {
             getLogger().info("DecentHolograms found! Enabling support...");
             useDecentHolograms = true;
         }
-
-        /*
-        boolean isValid = new LicenseGate("a1de4")
-                .verify(getConfig().getString("license-key"), "nxray")
-                .isValid();
-        if(!isValid) {
-            getLogger().severe("Invalid license key! Plugin will be disabled.");
-            getServer().getPluginManager().disablePlugin(this);
-        }*/
 
     }
 
