@@ -3,6 +3,10 @@ package com.notpatch.nXray.manager;
 import com.notpatch.nXray.NXray;
 import com.notpatch.nXray.model.XrayScanner;
 import com.notpatch.nXray.util.StringUtil;
+import de.oliver.fancyholograms.api.FancyHologramsPlugin;
+import de.oliver.fancyholograms.api.HologramManager;
+import de.oliver.fancyholograms.api.data.TextHologramData;
+import de.oliver.fancyholograms.api.hologram.Hologram;
 import eu.decentsoftware.holograms.api.DHAPI;
 import fr.skytasul.glowingentities.GlowingBlocks;
 import org.bukkit.ChatColor;
@@ -19,6 +23,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Optional;
 
 public class DisplayManager {
 
@@ -26,6 +31,7 @@ public class DisplayManager {
     private static final HashMap<Material, ChatColor> materialColorMap = new HashMap<>();
 
     static {
+
         materialColorMap.put(Material.COPPER_ORE, ChatColor.GOLD);
         materialColorMap.put(Material.DEEPSLATE_COPPER_ORE, ChatColor.GOLD);
         materialColorMap.put(Material.REDSTONE_ORE, ChatColor.RED);
@@ -70,6 +76,7 @@ public class DisplayManager {
 
         GlowingBlocks glowingBlocks = NXray.getInstance().getGlowingBlocks();
 
+
         blockLocations.put(p, getBlocksInRadius(l, scanner.getRadius()));
         displayBlocks(blockLocations.get(p), p);
         if(NXray.getInstance().isUseDecentHolograms()){
@@ -81,6 +88,23 @@ public class DisplayManager {
                 loreList.add(line);
             }
             DHAPI.createHologram(p.getName(), l.clone().add(0,3.95, 0), false, loreList);
+        }
+
+        if(NXray.getInstance().isUseFancyHolograms()){
+            HologramManager manager = FancyHologramsPlugin.get().getHologramManager();
+            TextHologramData data = new TextHologramData(p.getName(), l.clone().add(0,2.3, 0));
+            for(String line : NXray.getInstance().getConfig().getStringList("hologram.lines")){
+                line = StringUtil.hexColor(line);
+                line = line.replaceAll("%duration%", String.valueOf(scanner.getDuration()));
+                line = line.replaceAll("%radius%", String.valueOf(scanner.getRadius()));
+                data.addLine(line);
+            }
+            data.removeLine(0);
+            data.setPersistent(false);
+            Hologram hologram = manager.create(data);
+            manager.create(data);
+            manager.addHologram(hologram);
+
         }
 
         new BukkitRunnable() {
@@ -101,6 +125,13 @@ public class DisplayManager {
                 if(NXray.getInstance().isUseDecentHolograms()) {
                     if(DHAPI.getHologram(p.getName()) != null){
                         DHAPI.getHologram(p.getName()).delete();
+                    }
+                }
+                if(NXray.getInstance().isUseFancyHolograms()) {
+                    Optional<Hologram> hologram = FancyHologramsPlugin.get().getHologramManager().getHologram(p.getName());
+
+                    if(hologram != null){
+                        FancyHologramsPlugin.get().getHologramManager().removeHologram(hologram.get());
                     }
                 }
             }

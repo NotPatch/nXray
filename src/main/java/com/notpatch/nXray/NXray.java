@@ -10,6 +10,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class NXray extends JavaPlugin {
 
     private boolean useDecentHolograms = false;
+    private boolean useFancyHolograms = false;
+
     private static NXray instance;
     private static ArmorStandManager armorStandManager;
     private ScannerManager scannerManager;
@@ -35,6 +37,11 @@ public final class NXray extends JavaPlugin {
         if(getServer().getPluginManager().getPlugin("DecentHolograms") != null) {
             getLogger().info("DecentHolograms found! Enabling support...");
             useDecentHolograms = true;
+        }
+
+        if(getServer().getPluginManager().getPlugin("FancyHolograms") != null) {
+            getLogger().info("FancyHolograms found! Enabling support...");
+            useFancyHolograms = true;
         }
 
     }
@@ -64,4 +71,9 @@ public final class NXray extends JavaPlugin {
     public boolean isUseDecentHolograms() {
         return useDecentHolograms;
     }
+
+    public boolean isUseFancyHolograms() {
+        return useFancyHolograms;
+    }
+
 }
